@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TESTModelContainer" CdmEntityContainer="TESTEntities">
+    <EntitySetMapping Name="GOODS">
+      <EntityTypeMapping TypeName="TESTModel.GOODS">
+        <MappingFragment StoreEntitySet="GOODS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SELECT_GOODS" FunctionName="Хранилище TESTModel.SELECT_GOODS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TESTModel.SELECT_GOODS_Result">
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UPDATE_GOOD_PRICE" FunctionName="Хранилище TESTModel.UPDATE_GOOD_PRICE" />
+  </EntityContainerMapping>
+</Mapping>

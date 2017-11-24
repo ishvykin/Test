@@ -1,0 +1,37 @@
+﻿
+.nonactive_row:hover {
+    background: #786b59; 
+    color: #ffe;
+}
+.active_row {
+    background: brown;
+    color: darkblue;
+}
+#window {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    display: none;
+    background:darkgoldenrod;
+    z-index: 200;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 16px;
+}
+#alarm {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    display: none;
+    background:crimson;
+    z-index: 200;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 16px;
+}

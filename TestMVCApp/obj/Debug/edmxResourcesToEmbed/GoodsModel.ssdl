@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TESTModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GOODS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="quantity" Type="float" />
+    <Property Name="unit" Type="nvarchar(max)" />
+    <Property Name="price" Type="float" />
+    <Property Name="creation_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="SELECT_GOODS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filter" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="UPDATE_GOOD_PRICE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="good_id" Type="int" Mode="In" />
+    <Parameter Name="price" Type="float" Mode="In" />
+  </Function>
+  <EntityContainer Name="Хранилище TESTModelContainer">
+    <EntitySet Name="GOODS" EntityType="Self.GOODS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

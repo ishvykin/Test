@@ -1,0 +1,55 @@
+﻿@model SELECT_GOODS_Result
+@{
+    ViewBag.Title = "Goods";
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+<form action="/Home/Index">
+    <input type="text" name="filter"/>
+    <button type="submit" name="submitButton" value="find">Искать</button>
+    <button type="submit" name="submitButton" value="Excel">Выгрузить в Excel</button>
+</form>
+<input type="button" id="newWindow" value="Изменить" onclick="show()" />
+<div id="window">
+    <form>
+        <input type="text" id="insertedData"/>
+        <input type="button" id="newData" value="Изменить цену"/>
+        <input type="button" name="closeWindow" value="Отмена" onclick="clWindow()"/>
+    </form>
+</div>
+<div id="alarm">
+    <p>Вы либо не выбрали товары для изменения, либо ввели число меньше 0, либо не число.</p>
+        <input type="button" id="Ok" value="Отмена" onclick="clAlarm()"/>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Код товара</th>
+        <th>Наименование</th>
+        <th>Количество</th>
+        <th>Ед.изм.</th>
+        <th>Цена</th>
+        <th>Дата создания</th>
+    </tr>
+    </thead>
+    @if (ViewBag.ProcResult != null)
+    {
+        foreach (var someResult in ViewBag.ProcResult)
+        {
+            <tr class="nonactive_row" id="@someResult.id">
+                <td>@someResult.id</td>
+                <td>@someResult.description</td>
+                <td>@someResult.quantity</td>
+                <td>@someResult.unit</td>
+                <td id="price">@someResult.price</td>
+                <td>@someResult.creation_date</td>
+            </tr>
+        }
+    }
+</table>
+<script src="~/Scripts/NewJS.js"></script>
